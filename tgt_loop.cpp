@@ -183,7 +183,8 @@ static int loop_init_tgt(struct ublksrv_dev *dev, int type, int argc, char
 		bytes = st.st_size;
 		can_discard = true;
 		p.basic.logical_bs_shift = ilog2(st.st_blksize);
-		p.basic.physical_bs_shift = ilog2(st.st_blksize);
+		//p.basic.physical_bs_shift = ilog2(st.st_blksize);
+		p.basic.physical_bs_shift = ilog2(512);
 	} else {
 		bytes = 0;
 	}
